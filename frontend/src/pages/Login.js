@@ -1,18 +1,19 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import API from "../api/api";
 import "../styles/form.css";
 
 const Login = () => {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const res = await API.post("/users/login", { email, password });
       localStorage.setItem("token", res.data.token);
-      window.location.href = "/home";
+      navigate("/home");
     } catch (err) {
       alert("Invalid credentials");
     }
