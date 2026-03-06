@@ -9,8 +9,8 @@ dotenv.config({ path: path.resolve(process.cwd(), ".env") });
 
 // Debug env load
 console.log("MONGO_URI =", process.env.MONGO_URI ? "Loaded" : "Missing");
-// console.log("EMAIL_USER =", process.env.EMAIL_USER || "Missing");
-// console.log("EMAIL_PASS =", process.env.EMAIL_PASS ? "Loaded" : "Missing");
+console.log("EMAIL_USER =", process.env.EMAIL_USER || "Missing");
+console.log("EMAIL_PASS =", process.env.EMAIL_PASS ? "Loaded" : "Missing");
 
 // Import routes AFTER dotenv loads
 import userRoutes from "./routes/user.routes.js";

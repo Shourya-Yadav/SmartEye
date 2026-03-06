@@ -1,28 +1,46 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import API from "../api/api";
+import emailjs from "@emailjs/browser";
 import "../styles/services.css";
 
 const Services = () => {
+
   const [serviceType, setServiceType] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
 
   const submitRequest = async (e) => {
     e.preventDefault();
+
+    if (!serviceType || !description) {
+      setStatus("❌ Please fill all fields");
+      return;
+    }
+
     setStatus("Sending request...");
 
     try {
-      await API.post("/services/request", {
+
+      const templateParams = {
         location: serviceType,
         message: description,
-      });
+        time: new Date().toLocaleString()
+      };
 
-      setStatus("✅ Service request sent successfully. Email delivered.");
+      await emailjs.send(
+        "service_wp5wgeb",
+        "template_hfsfdjl",
+        templateParams,
+        "xlqDm8-BQ5OaquPOh"
+      );
+
+      setStatus("✅ Service request sent successfully.");
+
       setServiceType("");
       setDescription("");
-    } catch (err) {
-      console.error(err);
+
+    } catch (error) {
+      console.error("EmailJS Error:", error);
       setStatus("❌ Failed to send request");
     }
   };
@@ -33,12 +51,15 @@ const Services = () => {
 
       <div className="services-wrapper">
         <div className="services-card">
+
           <h2>Request Traffic Police Service</h2>
+
           <p className="subtitle">
             Raise an official request to traffic authorities
           </p>
 
           <form onSubmit={submitRequest}>
+
             <select
               value={serviceType}
               onChange={(e) => setServiceType(e.target.value)}
@@ -58,10 +79,14 @@ const Services = () => {
               required
             />
 
-            <button type="submit">Submit Request</button>
+            <button type="submit">
+              Submit Request
+            </button>
+
           </form>
 
           {status && <p className="status-msg">{status}</p>}
+
         </div>
       </div>
     </>
