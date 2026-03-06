@@ -1,0 +1,94 @@
+.hero-section {
+  background: linear-gradient(135deg, #1877f2, #0f5fd8);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-section h1 {
+  font-size: 56px;
+}
+
+.hero-section p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.hero-actions {
+  margin-top: 25px;
+}
+
+.hero-actions a {
+  padding: 12px 20px;
+  margin: 10px;
+  border-radius: 6px;
+  background: white;
+  color: #1877f2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-actions .secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.metrics {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px;
+  background: #f0f2f5;
+}
+
+.metrics div {
+  text-align: center;
+}
+
+.metrics h2 {
+  color: #1877f2;
+  font-size: 36px;
+}
+
+.architecture {
+  padding: 50px;
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.steps span {
+  background: #1877f2;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 50px;
+}
+
+.feature {
+  background: white;
+  padding: 25px;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #f0f2f5;
+  font-size: 14px;
+}

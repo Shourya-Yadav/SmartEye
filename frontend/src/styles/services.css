@@ -1,0 +1,64 @@
+.services-wrapper {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f2f5;
+}
+
+.services-card {
+  background: white;
+  width: 420px;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+.services-card h2 {
+  margin-bottom: 6px;
+  color: #1c1e21;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #606770;
+  margin-bottom: 20px;
+}
+
+.services-card select,
+.services-card textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.services-card textarea {
+  resize: none;
+  height: 90px;
+}
+
+.services-card button {
+  width: 100%;
+  padding: 12px;
+  background: #1877f2;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.services-card button:hover {
+  background: #166fe5;
+}
+
+.status-msg {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: bold;
+}
