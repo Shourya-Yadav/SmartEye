@@ -26,6 +26,7 @@
   color: #1877f2;
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
 }
 
 .hero-actions .secondary {
@@ -34,12 +35,14 @@
   color: white;
 }
 
+/* Metrics */
 .metrics {
   display: flex;
   justify-content: center;
   gap: 40px;
   padding: 50px;
   background: #f0f2f5;
+  flex-wrap: wrap;
 }
 
 .metrics div {
@@ -51,8 +54,9 @@
   font-size: 36px;
 }
 
+/* Architecture */
 .architecture {
-  padding: 50px;
+  padding: 50px 20px;
   text-align: center;
 }
 
@@ -71,24 +75,80 @@
   border-radius: 20px;
 }
 
+/* Features */
 .feature-grid {
   display: flex;
   justify-content: center;
   gap: 25px;
-  padding: 50px;
+  padding: 50px 20px;
+  flex-wrap: wrap;
 }
 
 .feature {
   background: white;
   padding: 25px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Footer */
 .footer {
   text-align: center;
   padding: 15px;
   background: #f0f2f5;
   font-size: 14px;
+}
+
+/* -------- Responsive -------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 42px;
+  }
+
+  .hero-section p {
+    font-size: 18px;
+  }
+
+  .metrics {
+    gap: 25px;
+  }
+
+  .metrics h2 {
+    font-size: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 60px 15px;
+  }
+
+  .hero-section h1 {
+    font-size: 32px;
+  }
+
+  .hero-section p {
+    font-size: 16px;
+  }
+
+  .hero-actions a {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  .metrics {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 15px;
+  }
+
+  .feature-grid {
+    padding: 40px 15px;
+  }
 }

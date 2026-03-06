@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 import "../styles/home.css";
 
 const Home = () => {
@@ -12,9 +13,12 @@ const Home = () => {
         <p>
           AI-Driven Traffic Violation Detection & Intelligent Monitoring Platform
         </p>
+
         <div className="hero-actions">
-          <a href="/dashboard">View Dashboard</a>
-          <a href="/detect" className="secondary">Detect Violation</a>
+          <Link to="/dashboard">View Dashboard</Link>
+          <Link to="/detect" className="secondary">
+            Detect Violation
+          </Link>
         </div>
       </section>
 
@@ -24,10 +28,12 @@ const Home = () => {
           <h2>98%</h2>
           <p>Detection Accuracy</p>
         </div>
+
         <div>
           <h2>Real-Time</h2>
           <p>Violation Processing</p>
         </div>
+
         <div>
           <h2>24/7</h2>
           <p>System Availability</p>
@@ -37,6 +43,7 @@ const Home = () => {
       {/* SYSTEM WORKFLOW */}
       <section className="architecture">
         <h2>System Workflow</h2>
+
         <div className="steps">
           <span>Traffic Input</span>
           <span>AI Rule Engine</span>
@@ -50,6 +57,7 @@ const Home = () => {
       <section className="feature-grid">
         <div className="feature">
           <h3>🚦 Automated Detection</h3>
+
           <p>
             Detects overspeeding, signal jumping and helmet violations using
             intelligent rule-based logic.
@@ -58,6 +66,7 @@ const Home = () => {
 
         <div className="feature">
           <h3>🧠 AI-Inspired Analysis</h3>
+
           <p>
             Mimics real-world traffic surveillance systems using decision rules
             and inference logic.
@@ -66,6 +75,7 @@ const Home = () => {
 
         <div className="feature">
           <h3>📊 Decision Support</h3>
+
           <p>
             Provides analytics and violation summaries to assist traffic
             authorities.

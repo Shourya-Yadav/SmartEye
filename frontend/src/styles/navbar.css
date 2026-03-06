@@ -5,12 +5,14 @@
   padding: 12px 24px;
   background-color: #1877f2;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -22,6 +24,7 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
 .logo:hover {
   background: rgba(255, 255, 255, 0.2);
 }
@@ -52,4 +55,54 @@
 
 .logout-btn:hover {
   background: #f0f2f5;
+}
+
+/* -------- Responsive -------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 16px;
+  }
+
+  .navbar-left {
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navbar-left {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .logout-btn {
+    width: 100%;
+    text-align: center;
+  }
 }

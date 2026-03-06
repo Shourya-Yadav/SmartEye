@@ -4,11 +4,13 @@
   justify-content: center;
   align-items: center;
   background: #f0f2f5;
+  padding: 20px;
 }
 
 .detect-card {
   background: white;
-  width: 420px;
+  width: 100%;
+  max-width: 420px;
   padding: 28px;
   border-radius: 14px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
@@ -47,6 +49,8 @@
   justify-content: space-between;
   margin-bottom: 18px;
   font-size: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .checkbox-row label {
@@ -93,7 +97,48 @@
   font-weight: bold;
 }
 
-.ai-report p{
+.ai-report p {
   margin: 4px 0;
   font-size: 14px;
+}
+
+/* ---------- Responsive ---------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .detect-card {
+    padding: 22px;
+  }
+
+  .detect-card h2 {
+    font-size: 22px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .detect-wrapper {
+    padding: 15px;
+  }
+
+  .detect-card {
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .detect-card input,
+  .detect-card select {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .detect-card button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .checkbox-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

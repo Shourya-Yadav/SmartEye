@@ -40,3 +40,54 @@
   font-size: 15px;
   color: #333;
 }
+
+/* -------- Responsive -------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .penalty-page {
+    padding: 30px 20px;
+  }
+
+  .penalty-page h1 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .penalty-grid {
+    gap: 18px;
+  }
+
+  .penalty-card {
+    padding: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .penalty-page {
+    padding: 20px 15px;
+  }
+
+  .penalty-page h1 {
+    font-size: 22px;
+  }
+
+  .penalty-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .penalty-card {
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .penalty-card h3 {
+    font-size: 16px;
+  }
+
+  .penalty-card p {
+    font-size: 14px;
+  }
+}

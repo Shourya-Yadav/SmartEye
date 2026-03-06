@@ -8,15 +8,16 @@ body {
   background: #f0f2f5;
 }
 
+/* Container */
 .fb-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* center → flex-start */
-  height: 100vh;
+  align-items: flex-start;
+  min-height: 100vh;
   gap: 80px;
-  padding-top: 140px; /* yahin se control hoga */
+  padding: 120px 20px 40px;
+  flex-wrap: wrap;
 }
-
 
 /* LEFT SIDE */
 .fb-left {
@@ -38,7 +39,8 @@ body {
 .fb-card {
   background: white;
   padding: 20px;
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
@@ -101,3 +103,52 @@ hr {
   background: #36a420;
 }
 
+/* -------- Responsive -------- */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .fb-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-top: 80px;
+  }
+
+  .fb-left {
+    text-align: center;
+  }
+
+  .fb-left h1 {
+    font-size: 48px;
+  }
+
+  .fb-left p {
+    font-size: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .fb-left h1 {
+    font-size: 38px;
+  }
+
+  .fb-left p {
+    font-size: 18px;
+  }
+
+  .fb-card {
+    padding: 18px;
+  }
+
+  .fb-card input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .login-btn,
+  .signup-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
