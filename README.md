@@ -132,7 +132,7 @@ GEMINI_API_KEY=your_gemini_api_key
 Start backend server
 
 ```bash
-npm start
+npm run dev
 ```
 
 Start frontend
