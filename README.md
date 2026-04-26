@@ -1,6 +1,8 @@
-# 🚦 SmartEye- A Generative AI powered Smart Traffic Violation Detection and Reporting System
+# 🚦 SmartEye — AI Powered Smart Traffic Violation Detection System
 
-SmartEye is an AI-powered smart traffic monitoring system designed to detect and analyze traffic violations using modern web technologies and Generative AI. The system helps automate traffic monitoring and reporting, making enforcement more efficient and transparent.
+SmartEye is a modern AI-powered traffic monitoring and violation management platform built to improve road safety, automate enforcement workflows, and support smart city infrastructure.
+
+The system combines **Computer Vision**, **Artificial Intelligence**, **AI Microservices**, and a **full-stack web dashboard** to detect traffic violations, manage evidence, visualize analytics, and streamline reporting.
 
 🌐 **Live Demo:**  
 https://smarteyefrontend.onrender.com/
@@ -9,173 +11,180 @@ https://smarteyefrontend.onrender.com/
 
 # 📌 Overview
 
-Rapid urbanization and the growing number of vehicles have made traffic monitoring increasingly challenging. Traditional monitoring methods rely on manual observation, which is time-consuming and prone to errors.
+With rapid urbanization and increasing vehicle density, traditional traffic monitoring systems struggle to manage modern traffic challenges efficiently.
 
-SmartEye addresses these challenges by integrating **Generative AI using Google's Gemini API (gemini-3-flash)** with a web-based dashboard to assist in analyzing traffic violations and generating structured reports.
+Manual traffic enforcement often suffers from:
 
-The system aims to improve road safety, support smarter city infrastructure, and reduce manual monitoring efforts.
+- Delayed violation reporting  
+- Human error  
+- Limited monitoring coverage  
+- Inconsistent challan processes  
+- Lack of evidence management  
+- Poor scalability  
+
+SmartEye solves these issues using a modern architecture consisting of:
+
+- Frontend Dashboard  
+- Backend REST APIs  
+- MongoDB Database  
+- AI Detection Service  
+- Evidence Storage System  
+
+The platform is designed for future **smart city deployment**.
 
 ---
 
-# 🎯 Features
+# 🎯 Core Features
 
-- 🚗 **Traffic Violation Monitoring** – Track and manage reported traffic violations
-- 🧠 **AI-Assisted Analysis** – Uses Gemini Generative AI for intelligent violation reporting
-- 📊 **Dashboard Analytics** – View  summaries of violations
-- 🔐 **Secure Authentication** – Login and access control
-- ⚡ **Fast and Responsive UI** – Built using modern React components
-- 🌐 **Cloud Deployment** – Hosted on Render
+- 🚗 Traffic Violation Detection  
+- 🧠 AI Powered Processing Engine  
+- 📊 Real-Time Dashboard Analytics  
+- 🔐 Secure Authentication System  
+- 🗂️ Evidence Management  
+- ⚡ Responsive Modern UI  
+- ☁️ Cloud Deployment Ready  
+- 📈 Search & Reports System  
 
 ---
 
-# 🧠 Generative AI Integration
+# 🧠 AI Service Features
 
-SmartEye integrates **Google Gemini API (gemini-3-flash)** to assist in:
+SmartEye includes a dedicated **ai-service** built using Python.
 
-- Generating violation summaries
-- Structuring traffic violation reports
-- Providing AI-based analysis of traffic events
-- Improving reporting efficiency
+Capabilities include:
+
+- Vehicle Detection  
+- Object Tracking  
+- OCR Number Plate Reading  
+- Video Frame Processing  
+- Evidence Generation  
+- Real-Time Stream Handling  
+- Traffic Analytics Ready Pipeline  
 
 ---
 
 # ⚙️ Tech Stack
 
 ## Frontend
-- React.js
-- CSS
-- Axios
-- React Router
+
+- React.js  
+- React Router  
+- Axios  
+- CSS / Tailwind CSS  
 
 ## Backend
-- Node.js
-- Express.js
-- REST API
+
+- Node.js  
+- Express.js  
+- JWT Authentication  
+- REST APIs  
+
+## AI Service
+
+- Python  
+- FastAPI  
+- OpenCV  
+- YOLOv8  
+- OCR Engine  
+- Object Tracking  
 
 ## Database
-- MongoDB
 
-## Generative AI
-- Google Gemini API
-- gemini-3-flash model
+- MongoDB Atlas / Compass  
 
 ## Deployment
-- Render
+
+- Render  
 
 ---
 
-# 📂 Project Structure
+# 📂 Complete Project Structure
 
-```
-SmartEye
+```bash
+SmartEye/
 │
-├── frontend
-│   ├── components
-│   ├── pages
-│   ├── services
-│   └── styles
+├── frontend/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   └── assets/
 │
-├── backend
-│   ├── routes
-│   ├── controllers
-│   ├── models
-│   └── middleware
+├── backend/
+│   ├── routes/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   └── config/
+│
+├── ai-service/
+│   ├── app/
+│   │   ├── routes/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── db.py
+│   │   ├── detector.py
+│   │   ├── main.py
+│   │   ├── ocr.py
+│   │   ├── processing.py
+│   │   ├── stream_manager.py
+│   │   ├── tracker.py
+│   │   └── utils.py
+│   │
+│   ├── evidence/
+│   ├── requirements.txt
+│   ├── run.bat
+│   ├── setup.bat
+│   └── yolov8n.pt
 │
 └── README.md
-```
-
----
-
-# 🚀 Installation & Setup
-
-## 1️⃣ Clone the repository
-
-```bash
-git clone https://github.com/yourusername/smarteye.git
-```
-
----
-
-## 2️⃣ Install dependencies
-
-Frontend
-
-```bash
+🚀 Installation & Setup
+1️⃣ Clone Repository
+git clone https://github.com/Shourya-Yadav/SmartEye.git
+cd SmartEye
+2️⃣ Install Frontend
 cd frontend
 npm install
-```
-
-Backend
-
-```bash
+npm start
+3️⃣ Install Backend
 cd backend
 npm install
-```
-
----
-
-## 3️⃣ Environment Variables
-
-Create a `.env` file in the backend folder.
-
-```
-PORT=8800
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret_key
-GEMINI_API_KEY=your_gemini_api_key
-```
-
----
-
-## 4️⃣ Run the project
-
-Start backend server
-
-```bash
 npm run dev
-```
+4️⃣ Install AI Service
+cd ai-service
+pip install -r requirements.txt
+python -m app.main
+🔐 Environment Variables
 
-Start frontend
+Create .env inside backend:
 
-```bash
-npm start
-```
+PORT=8800
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret
+AI_SERVICE_URL=http://localhost:8000
+📊 Use Cases
+Smart City Traffic Monitoring
+Automated Violation Detection
+Number Plate Evidence Logging
+Traffic Authority Dashboard
+Analytics & Reports
+AI Surveillance Systems
+🔮 Future Enhancements
+🚘 Automatic E-Challan Generation
+📹 Live CCTV Feed Integration
+📱 Mobile App for Authorities
+⚡ Real-Time Alerts
+🧠 Predictive Traffic Analysis
+☁️ Edge AI Deployment
+🗺️ Smart Intersection Control
+👨‍💻 Contributors
+Shourya Yadav
+Shreya Arya
+Shreya Jain
+Yusuf Rehan
 
----
+📜 License
+Developed for academic, research, and learning purposes.
 
-# 📊 Use Cases
-
-- Smart city traffic monitoring
-- Automated traffic violation reporting
-- Traffic safety analysis
-- Administrative traffic dashboards
-- Law enforcement assistance
-
----
-
-# 🔮 Future Enhancements
-
-- Automatic number plate recognition (ANPR)
-- Real-time CCTV integration
-- Mobile app for traffic authorities
-- Real-time violation alerts
-- Advanced AI-based traffic prediction
-
----
-
-# 👨‍💻 Contributors
-
-- **Shourya Yadav**
-- **Shreya Arya**
-- **Shreya Jain**
-- **Yusuf Rehan**
-
----
-
-# 📜 License
-
-This project is developed for **academic and research purposes**.
-
----
-
-⭐ If you find this project useful, consider giving it a **star on GitHub**.
+⭐ Support
+If you found this project useful, give it a star on GitHub.
