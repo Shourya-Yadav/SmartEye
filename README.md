@@ -133,6 +133,8 @@ SmartEye/
 │   └── yolov8n.pt
 │
 └── README.md
+```
+
 
 # 🚀 Installation & Setup
 
