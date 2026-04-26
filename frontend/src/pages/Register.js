@@ -7,62 +7,86 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       await API.post("/users/register", { name, email, password });
       alert("Registration successful");
       window.location.href = "/";
-    } catch (err) {
+    } catch {
       alert("User already exists or error occurred");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="auth-page-center">
-      {/* SmartEye heading */}
-      <h1 className="brand-title">SmartEye</h1>
-
-      {/* Card */}
+    <div className="auth-page">
       <div className="auth-card">
-        <h2>Create Account</h2>
+
+        {/* Brand */}
+        <div className="auth-brand">SmartEye</div>
+
+        <h2>Create account</h2>
+        <p className="auth-sub">Join the SmartEye monitoring platform</p>
 
         <form onSubmit={handleRegister}>
-          <input
-            type="text"
-            placeholder="Full Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+          <div className="input-group">
+            <label className="input-label">Full Name</label>
+            <input
+              className="se-input"
+              type="text"
+              placeholder="John Smith"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
 
-          <input
-            type="email"
-            placeholder="Email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+          <div className="input-group">
+            <label className="input-label">Email Address</label>
+            <input
+              className="se-input"
+              type="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <div className="input-group">
+            <label className="input-label">Password</label>
+            <input
+              className="se-input"
+              type="password"
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <p className="auth-hint">Minimum 8 characters recommended</p>
+          </div>
 
-          <button type="submit" className="green-btn">
-            Sign Up
+          <button
+            type="submit"
+            className="se-btn-accent"
+            style={{ marginTop: "10px" }}
+            disabled={loading}
+          >
+            {loading ? "Creating account…" : "Create Account →"}
           </button>
         </form>
 
-        <div className="divider"></div>
+        <div className="auth-divider" />
 
-        <p className="redirect-text">
-          Already have an account? <Link to="/">Login</Link>
+        <p className="auth-redirect">
+          Already have an account? <Link to="/">Sign in</Link>
         </p>
+
       </div>
     </div>
   );

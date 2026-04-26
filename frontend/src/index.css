@@ -1,40 +1,202 @@
-* {
-  box-sizing: border-box;
+/* ================================================================
+   SMARTEYE — GLOBAL DESIGN SYSTEM 2026
+   "Command Center" — Dark surveillance ops aesthetic
+   Fonts: Syne (display) · DM Sans (body) · DM Mono (data)
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+/* ---- Design Tokens ---- */
+:root {
+  /* Backgrounds */
+  --bg:           #070b14;
+  --surface:      #0f1624;
+  --surface-2:    #19233a;
+  --surface-3:    #1e2d45;
+
+  /* Primary — Electric Blue */
+  --primary:      #4e9eff;
+  --primary-dark: #2d7de0;
+  --primary-glow: rgba(78, 158, 255, 0.15);
+  --primary-dim:  rgba(78, 158, 255, 0.08);
+
+  /* Accent — Cyber Mint */
+  --accent:       #00e5a0;
+  --accent-dark:  #00b87d;
+  --accent-glow:  rgba(0, 229, 160, 0.12);
+  --accent-dim:   rgba(0, 229, 160, 0.07);
+
+  /* Status */
+  --danger:       #ff4d6a;
+  --danger-dim:   rgba(255, 77, 106, 0.1);
+  --warning:      #ffb347;
+  --warning-dim:  rgba(255, 179, 71, 0.1);
+  --info:         #7cacf8;
+  --info-dim:     rgba(124, 172, 248, 0.1);
+
+  /* Text */
+  --text:         #e2eaf4;
+  --text-2:       #9aaec2;
+  --text-3:       #5c7291;
+  --text-inv:     #070b14;
+
+  /* Borders */
+  --border:       #1e2d45;
+  --border-2:     #253550;
+
+  /* Shadows */
+  --shadow-sm:    0 1px 4px rgba(0,0,0,0.4);
+  --shadow-md:    0 4px 20px rgba(0,0,0,0.5);
+  --shadow-lg:    0 10px 50px rgba(0,0,0,0.6);
+  --glow:         0 0 0 3px rgba(78,158,255,0.2);
+
+  /* Radius */
+  --r-sm:  6px;
+  --r-md:  10px;
+  --r-lg:  16px;
+  --r-xl:  22px;
+  --r-full: 9999px;
+
+  /* Transitions */
+  --ease: all 0.18s ease;
+  --ease-slow: all 0.3s ease;
 }
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { overflow-x: hidden; }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-
-  background-color: #f0f2f5;
-  line-height: 1.5;
-
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Images responsive */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Remove default link styles */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Code blocks */
+img { max-width: 100%; height: auto; display: block; }
+a   { text-decoration: none; color: inherit; }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'DM Mono', 'Courier New', monospace;
 }
 
-/* Prevent horizontal scroll on mobile */
-html, body {
-  overflow-x: hidden;
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-2); }
+
+/* ---- Shared form inputs (used site-wide) ---- */
+.se-input {
+  width: 100%;
+  padding: 11px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  transition: var(--ease);
+  outline: none;
+}
+.se-input::placeholder { color: var(--text-3); }
+.se-input:focus {
+  border-color: var(--primary);
+  box-shadow: var(--glow);
+  background: var(--surface-3);
+}
+
+/* ---- Shared button styles ---- */
+.se-btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: var(--text-inv);
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: var(--ease);
+  letter-spacing: 0.2px;
+}
+.se-btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(78,158,255,0.35);
+}
+
+.se-btn-accent {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: var(--text-inv);
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: var(--ease);
+}
+.se-btn-accent:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0,229,160,0.3);
+}
+
+.se-btn-ghost {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: var(--ease);
+  padding: 10px 18px;
+}
+.se-btn-ghost:hover {
+  background: var(--surface-3);
+  border-color: var(--border-2);
+}
+
+/* ---- Badges ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'DM Mono', monospace;
+}
+.badge-blue   { background: var(--primary-dim); color: var(--primary); border: 1px solid rgba(78,158,255,0.2); }
+.badge-green  { background: var(--accent-dim);  color: var(--accent);  border: 1px solid rgba(0,229,160,0.2); }
+.badge-red    { background: var(--danger-dim);  color: var(--danger);  border: 1px solid rgba(255,77,106,0.2); }
+.badge-yellow { background: var(--warning-dim); color: var(--warning); border: 1px solid rgba(255,179,71,0.2); }
+
+/* ---- Section heading ---- */
+.se-section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 18px 0;
+  letter-spacing: -0.3px;
+}
+
+/* ---- Card ---- */
+.se-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
 }

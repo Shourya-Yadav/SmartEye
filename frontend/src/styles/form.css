@@ -1,154 +1,232 @@
-* {
-  box-sizing: border-box;
-}
+/* ================================================================
+   SMARTEYE — LOGIN PAGE (form.css) 2026
+   Split layout: branded left panel + form right panel
+   ================================================================ */
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f0f2f5;
-}
-
-/* Container */
-.fb-container {
+.login-page {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   min-height: 100vh;
-  gap: 80px;
-  padding: 120px 20px 40px;
-  flex-wrap: wrap;
+  background: var(--bg);
 }
 
-/* LEFT SIDE */
-.fb-left {
-  max-width: 450px;
+/* ---- LEFT PANEL ---- */
+.login-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 64px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
 }
 
-.fb-left h1 {
-  font-size: 56px;
-  color: #1877f2;
-  margin-bottom: 20px;
+/* Decorative grid background */
+.login-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.4;
 }
 
-.fb-left p {
-  font-size: 22px;
-  color: #1c1e21;
+/* Radial glow in corner */
+.login-left::after {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(78,158,255,0.12) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-/* RIGHT SIDE */
-.fb-card {
-  background: white;
-  padding: 20px;
+.login-left-content {
+  position: relative;
+  z-index: 1;
+}
+
+.login-brand {
+  font-family: 'Syne', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 12px 0;
+  line-height: 1;
+}
+
+.login-tagline {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.7;
+  max-width: 340px;
+  margin: 0 0 48px 0;
+}
+
+/* Stats strip */
+.login-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  transition: var(--ease);
+}
+
+.login-stat:hover {
+  border-color: var(--border-2);
+  background: var(--surface-3);
+}
+
+.login-stat-icon {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-dim);
+  border-radius: var(--r-sm);
+  flex-shrink: 0;
+}
+
+.login-stat-text strong {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.login-stat-text span {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+/* ---- RIGHT PANEL ---- */
+.login-right {
+  width: 440px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 40px;
+}
+
+.login-form-box {
   width: 100%;
   max-width: 360px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-.fb-card input {
+.login-form-box h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+
+.login-form-box .login-sub {
+  font-size: 13.5px;
+  color: var(--text-3);
+  margin: 0 0 30px 0;
+}
+
+/* Input group with label */
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+}
+
+/* Divider */
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.login-divider span {
+  font-size: 12px;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+
+/* Register link button */
+.register-link-btn {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 12px;
-  font-size: 16px;
-  border: 1px solid #dddfe2;
-  border-radius: 6px;
-}
-
-.fb-card input:focus {
-  outline: none;
-  border-color: #1877f2;
-}
-
-.login-btn {
-  width: 100%;
-  padding: 14px;
-  background: #1877f2;
-  color: white;
-  font-size: 18px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.login-btn:hover {
-  background: #166fe5;
-}
-
-.forgot {
-  text-align: center;
-  color: #1877f2;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-2);
   font-size: 14px;
-  margin: 14px 0;
+  font-weight: 500;
+  border-radius: var(--r-md);
   cursor: pointer;
+  transition: var(--ease);
+  text-align: center;
+  display: block;
+  font-family: inherit;
 }
 
-hr {
-  margin: 20px 0;
+.register-link-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
 }
 
-.signup-btn {
-  width: 100%;
-  padding: 14px;
-  background: #42b72a;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
+/* Footer note */
+.login-footer-note {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--text-3);
+  margin-top: 28px;
 }
 
-.signup-btn:hover {
-  background: #36a420;
-}
-
-/* -------- Responsive -------- */
-
-/* Tablet */
+/* ---- Responsive ---- */
 @media (max-width: 900px) {
-  .fb-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding-top: 80px;
-  }
-
-  .fb-left {
-    text-align: center;
-  }
-
-  .fb-left h1 {
-    font-size: 48px;
-  }
-
-  .fb-left p {
-    font-size: 20px;
+  .login-left { display: none; }
+  .login-right {
+    width: 100%;
+    padding: 40px 24px;
   }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
-  .fb-left h1 {
-    font-size: 38px;
-  }
-
-  .fb-left p {
-    font-size: 18px;
-  }
-
-  .fb-card {
-    padding: 18px;
-  }
-
-  .fb-card input {
-    padding: 12px;
-    font-size: 14px;
-  }
-
-  .login-btn,
-  .signup-btn {
-    font-size: 15px;
-    padding: 12px;
-  }
+  .login-right { padding: 32px 20px; }
 }

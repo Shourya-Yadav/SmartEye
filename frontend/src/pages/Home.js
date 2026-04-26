@@ -7,85 +7,156 @@ const Home = () => {
     <>
       <Navbar />
 
-      {/* HERO */}
-      <section className="hero-section">
-        <h1>SmartEye</h1>
-        <p>
-          AI-Driven Traffic Violation Detection & Intelligent Monitoring Platform
+      {/* ════════ HERO ════════ */}
+      <section className="hero">
+        <div className="hero-inner">
+
+          {/* Live badge */}
+          <div className="hero-badge">
+            <span className="hero-badge-dot" />
+            System Active · AI Engine Online
+          </div>
+
+          <h1>
+            Intelligent Traffic
+            <br />
+            <span className="gradient-text">Violation Detection</span>
+          </h1>
+
+          <p className="hero-sub">
+            SmartEye combines AI inference and real-time video analysis to
+            detect traffic violations with 98% accuracy — built for modern
+            traffic authorities.
+          </p>
+
+          <div className="hero-actions">
+            <Link to="/dashboard" className="hero-btn-primary">
+              📊 View Dashboard
+            </Link>
+            <Link to="/detect" className="hero-btn-ghost">
+              🎥 Detect Violation
+            </Link>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ════════ METRICS ════════ */}
+      <div className="metrics-strip">
+        <div className="metric-item">
+          <div className="metric-value">98%</div>
+          <div className="metric-label">Detection Accuracy</div>
+        </div>
+        <div className="metric-item">
+          <div className="metric-value">&lt;2s</div>
+          <div className="metric-label">Processing Latency</div>
+        </div>
+        <div className="metric-item">
+          <div className="metric-value">24/7</div>
+          <div className="metric-label">System Availability</div>
+        </div>
+      </div>
+
+      {/* ════════ WORKFLOW ════════ */}
+      <section className="workflow">
+        <h2>System Workflow</h2>
+        <p className="workflow-sub">
+          How SmartEye processes violations end-to-end
         </p>
 
-        <div className="hero-actions">
-          <Link to="/dashboard">View Dashboard</Link>
-          <Link to="/detect" className="secondary">
-            Detect Violation
-          </Link>
+        <div className="workflow-steps">
+
+          <div className="workflow-step">
+            <div className="workflow-node">
+              <span className="workflow-node-icon">📷</span>
+              <span className="workflow-node-label">Traffic Input</span>
+            </div>
+          </div>
+
+          <span className="workflow-arrow">→</span>
+
+          <div className="workflow-step">
+            <div className="workflow-node">
+              <span className="workflow-node-icon">🧠</span>
+              <span className="workflow-node-label">AI Rule Engine</span>
+            </div>
+          </div>
+
+          <span className="workflow-arrow">→</span>
+
+          <div className="workflow-step">
+            <div className="workflow-node">
+              <span className="workflow-node-icon">🔍</span>
+              <span className="workflow-node-label">Violation Analysis</span>
+            </div>
+          </div>
+
+          <span className="workflow-arrow">→</span>
+
+          <div className="workflow-step">
+            <div className="workflow-node">
+              <span className="workflow-node-icon">💰</span>
+              <span className="workflow-node-label">Fine Estimation</span>
+            </div>
+          </div>
+
+          <span className="workflow-arrow">→</span>
+
+          <div className="workflow-step">
+            <div className="workflow-node">
+              <span className="workflow-node-icon">📊</span>
+              <span className="workflow-node-label">Dashboard Output</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* TRUST METRICS */}
-      <section className="metrics">
-        <div>
-          <h2>98%</h2>
-          <p>Detection Accuracy</p>
+      {/* ════════ FEATURES ════════ */}
+      <section className="features">
+        <div className="features-header">
+          <h2>Platform Capabilities</h2>
+          <p>Everything you need for intelligent traffic surveillance</p>
         </div>
 
-        <div>
-          <h2>Real-Time</h2>
-          <p>Violation Processing</p>
-        </div>
+        <div className="features-grid">
 
-        <div>
-          <h2>24/7</h2>
-          <p>System Availability</p>
-        </div>
-      </section>
+          <div className="feature-card">
+            <span className="feature-icon">🚦</span>
+            <h3>Automated Detection</h3>
+            <p>
+              Detects overspeeding, signal jumping, and helmet violations using
+              intelligent rule-based logic trained on real traffic patterns.
+            </p>
+          </div>
 
-      {/* SYSTEM WORKFLOW */}
-      <section className="architecture">
-        <h2>System Workflow</h2>
+          <div className="feature-card">
+            <span className="feature-icon">🧠</span>
+            <h3>AI-Powered Analysis</h3>
+            <p>
+              Mimics real-world traffic surveillance using deep learning
+              inference — frame-by-frame video analysis with plate recognition.
+            </p>
+          </div>
 
-        <div className="steps">
-          <span>Traffic Input</span>
-          <span>AI Rule Engine</span>
-          <span>Violation Analysis</span>
-          <span>Fine Estimation</span>
-          <span>Dashboard Output</span>
-        </div>
-      </section>
+          <div className="feature-card">
+            <span className="feature-icon">📊</span>
+            <h3>Decision Support</h3>
+            <p>
+              Live analytics, violation summaries, and trend dashboards to
+              assist traffic authorities in data-driven enforcement.
+            </p>
+          </div>
 
-      {/* FEATURES */}
-      <section className="feature-grid">
-        <div className="feature">
-          <h3>🚦 Automated Detection</h3>
-
-          <p>
-            Detects overspeeding, signal jumping and helmet violations using
-            intelligent rule-based logic.
-          </p>
-        </div>
-
-        <div className="feature">
-          <h3>🧠 AI-Inspired Analysis</h3>
-
-          <p>
-            Mimics real-world traffic surveillance systems using decision rules
-            and inference logic.
-          </p>
-        </div>
-
-        <div className="feature">
-          <h3>📊 Decision Support</h3>
-
-          <p>
-            Provides analytics and violation summaries to assist traffic
-            authorities.
-          </p>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="footer">
-        © 2026 SmartEye – AI Traffic Monitoring System
+      {/* ════════ FOOTER ════════ */}
+      <footer className="home-footer">
+        <span className="footer-brand">SmartEye</span>
+        <span className="footer-copy">
+          © 2026 SmartEye · AI Traffic Monitoring System
+        </span>
       </footer>
     </>
   );
