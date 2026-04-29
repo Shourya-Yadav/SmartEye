@@ -1,4 +1,4 @@
-# 🚦 SmartEye — AI Powered Smart Traffic Violation Detection System
+# 🚦 SmartEye: A Generative AI powered Smart Traffic Violation Detection and Reporting System
 
 SmartEye is a modern AI-powered traffic monitoring and violation management platform built to improve road safety, automate enforcement workflows, and support smart city infrastructure.
 
